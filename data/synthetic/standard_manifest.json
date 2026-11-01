@@ -1,0 +1,41 @@
+{
+  "profile": "standard",
+  "seed": 20260723,
+  "n_realizations": 600,
+  "env": {
+    "python": "3.12.10",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.1.0",
+    "matplotlib": "3.11.2",
+    "scikit_learn": "1.9.1",
+    "cpu_count": 4
+  },
+  "datasets": {
+    "val_los": {
+      "n": 600,
+      "clusters": 7535,
+      "wall_s": 427.1111598999996,
+      "mean_time_per_realization_s": 2.6965161996669487
+    },
+    "pl_los": {
+      "n": 600,
+      "clusters": 7450,
+      "wall_s": 407.2398140000005,
+      "mean_time_per_realization_s": 2.541719822833329
+    },
+    "val_nlos": {
+      "n": 600,
+      "clusters": 51671,
+      "wall_s": 1239.8263083000056,
+      "mean_time_per_realization_s": 7.984580686499976
+    },
+    "pl_nlos": {
+      "n": 600,
+      "clusters": 54967,
+      "wall_s": 545.1668623000005,
+      "mean_time_per_realization_s": 3.4732136073332125
+    }
+  }
+}

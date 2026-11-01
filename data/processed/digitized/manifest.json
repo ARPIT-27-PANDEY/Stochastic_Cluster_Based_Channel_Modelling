@@ -1,0 +1,626 @@
+{
+  "source": "Cheng et al., IEEE TWC vol. 25, 2026 - vector figures",
+  "note": "digitized from the published figures; not raw measurement data",
+  "curves": [
+    {
+      "figure": "fig02_cluster_number",
+      "role": "los_measured",
+      "file": "fig02_cluster_number__los_measured.csv",
+      "page": 5,
+      "x_range": [
+        1,
+        300
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 28,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig02_cluster_number__los_measured__samples.csv",
+      "n_samples": 21
+    },
+    {
+      "figure": "fig02_cluster_number",
+      "role": "los_gamma_fit",
+      "file": "fig02_cluster_number__los_gamma_fit.csv",
+      "page": 5,
+      "x_range": [
+        1,
+        300
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 30
+    },
+    {
+      "figure": "fig02_cluster_number",
+      "role": "nlos_measured",
+      "file": "fig02_cluster_number__nlos_measured.csv",
+      "page": 5,
+      "x_range": [
+        1,
+        300
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 32,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig02_cluster_number__nlos_measured__samples.csv",
+      "n_samples": 17
+    },
+    {
+      "figure": "fig02_cluster_number",
+      "role": "nlos_gamma_fit",
+      "file": "fig02_cluster_number__nlos_gamma_fit.csv",
+      "page": 5,
+      "x_range": [
+        1,
+        300
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 300
+    },
+    {
+      "figure": "fig06_delay_spread",
+      "role": "loscluster_measured",
+      "file": "fig06_delay_spread__loscluster_measured.csv",
+      "page": 7,
+      "x_range": [
+        0.05,
+        5
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 42
+    },
+    {
+      "figure": "fig06_delay_spread",
+      "role": "loscluster_fit",
+      "file": "fig06_delay_spread__loscluster_fit.csv",
+      "page": 7,
+      "x_range": [
+        0.05,
+        5
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 147
+    },
+    {
+      "figure": "fig06_delay_spread",
+      "role": "los_measured",
+      "file": "fig06_delay_spread__los_measured.csv",
+      "page": 7,
+      "x_range": [
+        0.05,
+        5
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 400
+    },
+    {
+      "figure": "fig06_delay_spread",
+      "role": "los_fit",
+      "file": "fig06_delay_spread__los_fit.csv",
+      "page": 7,
+      "x_range": [
+        0.05,
+        5
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 497
+    },
+    {
+      "figure": "fig06_delay_spread",
+      "role": "nlos_measured",
+      "file": "fig06_delay_spread__nlos_measured.csv",
+      "page": 7,
+      "x_range": [
+        0.05,
+        5
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 2781
+    },
+    {
+      "figure": "fig06_delay_spread",
+      "role": "nlos_fit",
+      "file": "fig06_delay_spread__nlos_fit.csv",
+      "page": 7,
+      "x_range": [
+        0.05,
+        5
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 498
+    },
+    {
+      "figure": "fig10_doa_spread",
+      "role": "loscluster_measured",
+      "file": "fig10_doa_spread__loscluster_measured.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 42
+    },
+    {
+      "figure": "fig10_doa_spread",
+      "role": "loscluster_fit",
+      "file": "fig10_doa_spread__loscluster_fit.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 390
+    },
+    {
+      "figure": "fig10_doa_spread",
+      "role": "los_measured",
+      "file": "fig10_doa_spread__los_measured.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 343
+    },
+    {
+      "figure": "fig10_doa_spread",
+      "role": "los_fit",
+      "file": "fig10_doa_spread__los_fit.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 452
+    },
+    {
+      "figure": "fig10_doa_spread",
+      "role": "nlos_measured",
+      "file": "fig10_doa_spread__nlos_measured.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 2454
+    },
+    {
+      "figure": "fig10_doa_spread",
+      "role": "nlos_fit",
+      "file": "fig10_doa_spread__nlos_fit.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 452
+    },
+    {
+      "figure": "fig11_dod_spread",
+      "role": "loscluster_measured",
+      "file": "fig11_dod_spread__loscluster_measured.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 42
+    },
+    {
+      "figure": "fig11_dod_spread",
+      "role": "loscluster_fit",
+      "file": "fig11_dod_spread__loscluster_fit.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 390
+    },
+    {
+      "figure": "fig11_dod_spread",
+      "role": "los_measured",
+      "file": "fig11_dod_spread__los_measured.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 331
+    },
+    {
+      "figure": "fig11_dod_spread",
+      "role": "los_fit",
+      "file": "fig11_dod_spread__los_fit.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 452
+    },
+    {
+      "figure": "fig11_dod_spread",
+      "role": "nlos_measured",
+      "file": "fig11_dod_spread__nlos_measured.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 2409
+    },
+    {
+      "figure": "fig11_dod_spread",
+      "role": "nlos_fit",
+      "file": "fig11_dod_spread__nlos_fit.csv",
+      "page": 8,
+      "x_range": [
+        0.05,
+        0.6
+      ],
+      "x_log": true,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 452
+    },
+    {
+      "figure": "fig17a_delay_spread",
+      "role": "los_measured",
+      "file": "fig17a_delay_spread__los_measured.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        40
+      ],
+      "x_log": false,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 42,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17a_delay_spread__los_measured__samples.csv",
+      "n_samples": 21
+    },
+    {
+      "figure": "fig17a_delay_spread",
+      "role": "los_paper_synthetic",
+      "file": "fig17a_delay_spread__los_paper_synthetic.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        40
+      ],
+      "x_log": false,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 410,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17a_delay_spread__los_paper_synthetic__samples.csv",
+      "n_samples": 205
+    },
+    {
+      "figure": "fig17a_delay_spread",
+      "role": "nlos_measured",
+      "file": "fig17a_delay_spread__nlos_measured.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        40
+      ],
+      "x_log": false,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 34,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17a_delay_spread__nlos_measured__samples.csv",
+      "n_samples": 17
+    },
+    {
+      "figure": "fig17a_delay_spread",
+      "role": "nlos_paper_synthetic",
+      "file": "fig17a_delay_spread__nlos_paper_synthetic.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        40
+      ],
+      "x_log": false,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 100,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17a_delay_spread__nlos_paper_synthetic__samples.csv",
+      "n_samples": 50
+    },
+    {
+      "figure": "fig17b_doa_spread",
+      "role": "los_measured",
+      "file": "fig17b_doa_spread__los_measured.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        1
+      ],
+      "x_log": false,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 42,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17b_doa_spread__los_measured__samples.csv",
+      "n_samples": 21
+    },
+    {
+      "figure": "fig17b_doa_spread",
+      "role": "los_paper_synthetic",
+      "file": "fig17b_doa_spread__los_paper_synthetic.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        1
+      ],
+      "x_log": false,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 402,
+      "n_clipped_at_axis_max": 3,
+      "samples_file": "fig17b_doa_spread__los_paper_synthetic__samples.csv",
+      "n_samples": 205
+    },
+    {
+      "figure": "fig17b_doa_spread",
+      "role": "nlos_measured",
+      "file": "fig17b_doa_spread__nlos_measured.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        1
+      ],
+      "x_log": false,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 34,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17b_doa_spread__nlos_measured__samples.csv",
+      "n_samples": 17
+    },
+    {
+      "figure": "fig17b_doa_spread",
+      "role": "nlos_paper_synthetic",
+      "file": "fig17b_doa_spread__nlos_paper_synthetic.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        1
+      ],
+      "x_log": false,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 80,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17b_doa_spread__nlos_paper_synthetic__samples.csv",
+      "n_samples": 40
+    },
+    {
+      "figure": "fig17c_dod_spread",
+      "role": "los_measured",
+      "file": "fig17c_dod_spread__los_measured.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        1
+      ],
+      "x_log": false,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 42,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17c_dod_spread__los_measured__samples.csv",
+      "n_samples": 21
+    },
+    {
+      "figure": "fig17c_dod_spread",
+      "role": "los_paper_synthetic",
+      "file": "fig17c_dod_spread__los_paper_synthetic.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        1
+      ],
+      "x_log": false,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 410,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17c_dod_spread__los_paper_synthetic__samples.csv",
+      "n_samples": 205
+    },
+    {
+      "figure": "fig17c_dod_spread",
+      "role": "nlos_measured",
+      "file": "fig17c_dod_spread__nlos_measured.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        1
+      ],
+      "x_log": false,
+      "color": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "n_points": 34,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17c_dod_spread__nlos_measured__samples.csv",
+      "n_samples": 17
+    },
+    {
+      "figure": "fig17c_dod_spread",
+      "role": "nlos_paper_synthetic",
+      "file": "fig17c_dod_spread__nlos_paper_synthetic.csv",
+      "page": 15,
+      "x_range": [
+        0,
+        1
+      ],
+      "x_log": false,
+      "color": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "n_points": 80,
+      "n_clipped_at_axis_max": 0,
+      "samples_file": "fig17c_dod_spread__nlos_paper_synthetic__samples.csv",
+      "n_samples": 40
+    }
+  ]
+}

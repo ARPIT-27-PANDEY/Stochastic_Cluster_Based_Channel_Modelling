@@ -1,0 +1,14 @@
+{
+  "profile": "standard",
+  "seed": 20260723,
+  "n": 150,
+  "variants": {
+    "table_I": {},
+    "text_arrival": {
+      "arrival_source": "text"
+    },
+    "wrapped_laplace": {
+      "bimodal_laplace_mode": "wrapped"
+    }
+  }
+}

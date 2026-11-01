@@ -1,0 +1,19 @@
+Reproduced paper (NOT included in this repository - copyrighted, IEEE):
+
+  Y. Cheng, N. A. Abbasi, J. Gomez-Ponce, Z. Zhang, A. F. Molisch,
+  "Stochastic Cluster-Based Channel Modeling for Sub-Terahertz Outdoor
+   Device-to-Device Radio Propagation at 145 GHz,"
+  IEEE Transactions on Wireless Communications, vol. 25, pp. 20883-20899, 2026.
+  doi: 10.1109/TWC.2026.3714332
+
+Measurement campaign the model is built on (cited as [21] in the paper):
+  N. A. Abbasi et al., "THz band channel measurements and statistical modeling
+  for urban D2D environments," arXiv:2109.13693 (v1), later IEEE TWC.
+
+Authors' MATLAB toolkit ([60] in the paper):
+  "Channel Generation Toolkit for sub-THz Outdoor D2D Links at 145 GHz",
+  USC WiDeS, https://wides.usc.edu/research_matlab.html
+  (download is gated behind a Google Form; not obtained - see docs/DATA_AVAILABILITY.md)
+
+Obtain the paper through IEEE Xplore with the DOI above.  The digitisation script
+(scripts/digitize_published_figures.py --pdf <path>) needs a local copy.

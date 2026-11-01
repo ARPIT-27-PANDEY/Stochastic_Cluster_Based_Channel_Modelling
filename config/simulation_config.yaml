@@ -1,0 +1,55 @@
+# Simulation / experiment scale profiles.  Select with  --profile smoke|standard|full
+# All seeds are fixed so every run is deterministic.
+
+grid:
+  delay_resolution_m: 0.29979     # native 1 ns Fourier bin
+  n_delay_bins: 1001              # 0 ... 300 m excess run length
+  angle_step_deg: 10.0            # native 10 deg rotor step -> 36 DoA x 36 DoD bins
+  tail_margin_db: 0.0             # 0 = each cluster keeps only its own above-cutoff taps (default, see METHODOLOGY)
+
+generator:
+  dynamic_range_db: 35.0
+  max_fixed_point_iterations: 20
+  fixed_point_tol_db: 0.01
+  correction_iterations: 3        # discretization-correction <-> inverse-mapping refinements
+  newton_max_iter: 60
+  newton_tol: 1.0e-10
+  correction_table: data/processed/discretization_correction.npz
+
+profiles:
+  smoke:
+    seed: 1234
+    n_realizations: 40
+    n_pathloss_channels: 50
+    n_mle_channels: 60
+    dr_sweep_db: [5, 15, 25, 35]
+    perf_sizes: [5, 10, 20]
+    n_clustering_channels: 2
+  standard:
+    seed: 20260723
+    n_realizations: 600
+    n_pathloss_channels: 50        # paper: 50 channels per condition
+    n_pathloss_repeats: 200        # repeat the 50-channel experiment for a sampling distribution
+    n_mle_channels: 400
+    dr_sweep_db: [5, 10, 15, 20, 25, 30, 35]
+    perf_sizes: [5, 10, 25, 50]
+    n_clustering_channels: 6
+  full:
+    seed: 20260723
+    n_realizations: 3000
+    n_pathloss_channels: 50
+    n_pathloss_repeats: 1000
+    n_mle_channels: 1500
+    dr_sweep_db: [5, 10, 15, 20, 25, 30, 35]
+    perf_sizes: [10, 50, 100, 200]
+    n_clustering_channels: 20
+
+fig14_15:                          # illustrative configuration of Sec. VI
+  kappa_tau_m: 10.0
+  kappa_dod_rad: 0.6283185307179586  # 0.2 pi  (text assignment)
+  kappa_doa_rad: 0.9424777960769379  # 0.3 pi
+  dr_db_min: 1
+  dr_db_max: 50
+  dr_db_step: 1
+  fine_delay_resolution_m: 0.01     # fine grid used for the "actual" spreads (paper grid not stated)
+  fine_angle_step_deg: 0.25

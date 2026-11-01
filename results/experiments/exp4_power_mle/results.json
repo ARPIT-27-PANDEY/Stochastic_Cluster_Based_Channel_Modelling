@@ -1,0 +1,102 @@
+{
+  "los": {
+    "n_observable": 2612,
+    "n_drawn": 4547,
+    "truth_table_I": {
+      "alpha": -20.69,
+      "beta": -1.19,
+      "rho": 9.26,
+      "eta": -0.17
+    },
+    "mle": {
+      "alpha": -18.257648351590188,
+      "beta": -0.49500313698064463,
+      "rho": 7.426170244000973,
+      "eta": -0.24434260558657728,
+      "llf": -3024.5829078759452,
+      "iterations": 1371,
+      "converged": true,
+      "n_starts": 8
+    },
+    "mle_time_s": 40.15094859999954,
+    "lbfgs_check": {
+      "alpha": -17.093860561793484,
+      "beta": -0.6695346014670905,
+      "rho": 6.694067082934452,
+      "eta": 0.0,
+      "llf": -3046.071131807455
+    },
+    "ols": {
+      "alpha": -17.64865024518824,
+      "beta": -0.5403366937833989
+    },
+    "ols_on_all_drawn_clusters": {
+      "alpha": -20.522604961334395,
+      "beta": -1.2125681924929068
+    },
+    "coverage_1sigma": {
+      "empirical": 0.7308575803981623,
+      "truncated_expected": 0.7014996644109501
+    },
+    "coverage_3sigma": {
+      "empirical": 0.9934915773353752,
+      "truncated_expected": 0.9986122863336675
+    },
+    "published_coverage": {
+      "one_sigma": 0.7155,
+      "three_sigma": 0.9916,
+      "expected_one_sigma": 0.746,
+      "expected_three_sigma": 0.998
+    }
+  },
+  "nlos": {
+    "n_observable": 23769,
+    "n_drawn": 34121,
+    "truth_table_I": {
+      "alpha": -33.41,
+      "beta": -1.81,
+      "rho": 10.39,
+      "eta": -0.035
+    },
+    "mle": {
+      "alpha": -31.358556784766183,
+      "beta": -1.67299242442627,
+      "rho": 9.521432430033524,
+      "eta": -0.044667815183920906,
+      "llf": -41122.676930228045,
+      "iterations": 386,
+      "converged": true,
+      "n_starts": 8
+    },
+    "mle_time_s": 1337.5245198000048,
+    "lbfgs_check": {
+      "alpha": -30.647503792180014,
+      "beta": -1.596838041002523,
+      "rho": 10.041463953018763,
+      "eta": 0.0,
+      "llf": -41377.15522810171
+    },
+    "ols": {
+      "alpha": -30.6239932870465,
+      "beta": -1.6009652042822495
+    },
+    "ols_on_all_drawn_clusters": {
+      "alpha": -33.39058122741177,
+      "beta": -1.8290604403400565
+    },
+    "coverage_1sigma": {
+      "empirical": 0.7226639740838908,
+      "truncated_expected": 0.716205423695003
+    },
+    "coverage_3sigma": {
+      "empirical": 0.997643990071101,
+      "truncated_expected": 0.9985272526990028
+    },
+    "published_coverage": {
+      "one_sigma": 0.6779,
+      "three_sigma": 0.9934,
+      "expected_one_sigma": 0.717,
+      "expected_three_sigma": 0.998
+    }
+  }
+}

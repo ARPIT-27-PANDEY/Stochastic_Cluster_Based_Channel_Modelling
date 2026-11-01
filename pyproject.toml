@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sub-thz-d2d-channel-model"
+version = "1.0.0"
+description = "Independent Python reproduction of the 145 GHz outdoor D2D stochastic cluster-based channel model (Cheng et al., IEEE TWC 2026)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT (code only; the paper and its data are not included)" }
+authors = [
+  { name = "Piyush Bhaskar (23116075)" },
+  { name = "Akersheet Tripathi (23116005)" },
+  { name = "Arpit Kumar Pandey (23116017)" },
+]
+dependencies = [
+  "numpy>=1.26", "scipy>=1.11", "pandas>=2.0", "matplotlib>=3.8",
+  "scikit-learn>=1.3", "statsmodels>=0.14", "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "jupyter", "nbformat", "nbconvert"]
+slides = ["python-pptx>=0.6.23", "pymupdf>=1.23"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+markers = ["slow: longer integration tests"]

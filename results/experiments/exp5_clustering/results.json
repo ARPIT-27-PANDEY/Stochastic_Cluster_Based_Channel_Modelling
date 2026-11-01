@@ -1,0 +1,180 @@
+{
+  "per_channel": [
+    {
+      "condition": "los",
+      "channel": 0,
+      "n_taps": 798,
+      "n_true": 27,
+      "n_kpd": 3,
+      "n_mlkpd": 33,
+      "levels": 6,
+      "ari_kpd": 0.36893219500650803,
+      "ari_mlkpd": 0.9397706731217041,
+      "t_kpd_s": 0.0561877000000095,
+      "t_mlkpd_s": 0.17231869998795446
+    },
+    {
+      "condition": "los",
+      "channel": 1,
+      "n_taps": 186,
+      "n_true": 3,
+      "n_kpd": 3,
+      "n_mlkpd": 3,
+      "levels": 1,
+      "ari_kpd": 1.0,
+      "ari_mlkpd": 1.0,
+      "t_kpd_s": 0.002712400004384108,
+      "t_mlkpd_s": 0.0029746999935014173
+    },
+    {
+      "condition": "los",
+      "channel": 2,
+      "n_taps": 540,
+      "n_true": 12,
+      "n_kpd": 7,
+      "n_mlkpd": 12,
+      "levels": 3,
+      "ari_kpd": 0.792393592679458,
+      "ari_mlkpd": 0.9711426477813667,
+      "t_kpd_s": 0.005960900001809932,
+      "t_mlkpd_s": 0.045615800001542084
+    },
+    {
+      "condition": "los",
+      "channel": 3,
+      "n_taps": 280,
+      "n_true": 7,
+      "n_kpd": 3,
+      "n_mlkpd": 4,
+      "levels": 2,
+      "ari_kpd": 0.6797687004051457,
+      "ari_mlkpd": 0.9756550922421878,
+      "t_kpd_s": 0.0035814000002574176,
+      "t_mlkpd_s": 0.02873120000003837
+    },
+    {
+      "condition": "los",
+      "channel": 4,
+      "n_taps": 196,
+      "n_true": 5,
+      "n_kpd": 2,
+      "n_mlkpd": 6,
+      "levels": 4,
+      "ari_kpd": 0.8164532025764026,
+      "ari_mlkpd": 0.1931686913213051,
+      "t_kpd_s": 0.002903499989770353,
+      "t_mlkpd_s": 0.0197115000046324
+    },
+    {
+      "condition": "los",
+      "channel": 5,
+      "n_taps": 170,
+      "n_true": 3,
+      "n_kpd": 2,
+      "n_mlkpd": 2,
+      "levels": 1,
+      "ari_kpd": 0.9959234943902572,
+      "ari_mlkpd": 0.9959234943902572,
+      "t_kpd_s": 0.0027274000021861866,
+      "t_mlkpd_s": 0.02181360000395216
+    },
+    {
+      "condition": "nlos",
+      "channel": 0,
+      "n_taps": 5853,
+      "n_true": 44,
+      "n_kpd": 5,
+      "n_mlkpd": 46,
+      "levels": 6,
+      "ari_kpd": 0.028102485564334437,
+      "ari_mlkpd": 0.9261352875687457,
+      "t_kpd_s": 0.10718579999229405,
+      "t_mlkpd_s": 0.5028268000023672
+    },
+    {
+      "condition": "nlos",
+      "channel": 1,
+      "n_taps": 2970,
+      "n_true": 50,
+      "n_kpd": 6,
+      "n_mlkpd": 45,
+      "levels": 6,
+      "ari_kpd": 0.09332436922857582,
+      "ari_mlkpd": 0.8836835424305095,
+      "t_kpd_s": 0.04158790000656154,
+      "t_mlkpd_s": 0.7794716999924276
+    },
+    {
+      "condition": "nlos",
+      "channel": 2,
+      "n_taps": 1314,
+      "n_true": 22,
+      "n_kpd": 9,
+      "n_mlkpd": 16,
+      "levels": 2,
+      "ari_kpd": 0.7278737444705231,
+      "ari_mlkpd": 0.7809810712528891,
+      "t_kpd_s": 0.015334999989136122,
+      "t_mlkpd_s": 0.11221479999949224
+    },
+    {
+      "condition": "nlos",
+      "channel": 3,
+      "n_taps": 3555,
+      "n_true": 21,
+      "n_kpd": 9,
+      "n_mlkpd": 20,
+      "levels": 4,
+      "ari_kpd": 0.18510752134170855,
+      "ari_mlkpd": 0.9983666158385407,
+      "t_kpd_s": 0.05776219999825116,
+      "t_mlkpd_s": 0.21368960000108927
+    },
+    {
+      "condition": "nlos",
+      "channel": 4,
+      "n_taps": 1030,
+      "n_true": 28,
+      "n_kpd": 12,
+      "n_mlkpd": 27,
+      "levels": 4,
+      "ari_kpd": 0.7731897966964864,
+      "ari_mlkpd": 0.9250117703373864,
+      "t_kpd_s": 0.010250999999698251,
+      "t_mlkpd_s": 0.09976119999191724
+    },
+    {
+      "condition": "nlos",
+      "channel": 5,
+      "n_taps": 633,
+      "n_true": 13,
+      "n_kpd": 5,
+      "n_mlkpd": 13,
+      "levels": 2,
+      "ari_kpd": 0.8831904312729146,
+      "ari_mlkpd": 0.7241801706194251,
+      "t_kpd_s": 0.006709699999191798,
+      "t_mlkpd_s": 0.06591910000133794
+    }
+  ],
+  "mean": [
+    {
+      "condition": "los",
+      "n_true": 9.5,
+      "n_kpd": 3.3333333333333335,
+      "n_mlkpd": 10.0,
+      "ari_kpd": 0.7755785308429619,
+      "ari_mlkpd": 0.8459434331428035,
+      "t_mlkpd_s": 0.04852758333193682
+    },
+    {
+      "condition": "nlos",
+      "n_true": 29.666666666666668,
+      "n_kpd": 7.666666666666667,
+      "n_mlkpd": 27.833333333333332,
+      "ari_kpd": 0.4484647247624238,
+      "ari_mlkpd": 0.8730597430079161,
+      "t_mlkpd_s": 0.29564719999810524
+    }
+  ]
+}

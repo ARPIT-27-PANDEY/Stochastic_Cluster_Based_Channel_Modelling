@@ -1,0 +1,18 @@
+# environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+# copyrighted paper / third-party material: never commit
+paper/*.pdf
+*.pdf
+data/raw/*
+!data/raw/README.md
+# large regenerable outputs
+data/synthetic/*.npz
+results/logs/*.log
+presentation/presentation_source/renders/
+# regenerable simulated data sets (scripts/generate_channels.py); manifests are kept
+data/synthetic/*.csv.gz

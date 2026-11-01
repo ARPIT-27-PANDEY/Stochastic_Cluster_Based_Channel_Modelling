@@ -1,0 +1,35 @@
+{
+  "profile": "standard",
+  "seed": 20260723,
+  "n_channels": 400,
+  "n_bins": 20,
+  "ratio_range_db": [
+    0.0,
+    20.0
+  ],
+  "min_bin_fraction": 0.01,
+  "min_bin_fraction_text": 0.02,
+  "learning_rate": 0.001,
+  "max_iterations": 200000,
+  "tol_llf": 1e-10,
+  "n_starts": 8,
+  "start_box": {
+    "alpha": [
+      -50.0,
+      10.0
+    ],
+    "beta": [
+      -4.0,
+      1.0
+    ],
+    "rho": [
+      2.0,
+      15.0
+    ],
+    "eta": [
+      -0.5,
+      0.2
+    ]
+  },
+  "threshold_definition": "per realization: NCP_thr = cut-off [dB] + FSPL(d_LoS) (a cluster cannot be observed with total power below one tap at the cut-off)"
+}

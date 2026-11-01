@@ -1,0 +1,17 @@
+{
+  "profile": "standard",
+  "seed": 20260723,
+  "n_channels_per_condition": 6,
+  "clustering": {
+    "smoothing_window_delay_bins": 5,
+    "smoothing_window_angle_bins": 3,
+    "dip_to_peak_ratio": 0.8,
+    "threshold_start": 1.0,
+    "threshold_step": 0.01,
+    "initial_connectivity_threshold": 0.5,
+    "max_levels": 6,
+    "min_cluster_taps_to_split": 4,
+    "oversampling_rate": 5
+  },
+  "ground_truth": "tap label = cluster contributing the most power to the tap (exact for generator output)"
+}

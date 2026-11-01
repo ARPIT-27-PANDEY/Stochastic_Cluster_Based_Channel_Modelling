@@ -1,0 +1,156 @@
+[
+  {
+    "condition": "los",
+    "dr_db": 5,
+    "n": 60,
+    "visible_mean": 1.0333333333333334,
+    "ds_median_m": 0.3163599632428145,
+    "asa_median": 0.13998043286230766,
+    "asd_median": 0.1414016339627754,
+    "taps_median": 19.0,
+    "pg_omni_median_db": -103.51545327884004
+  },
+  {
+    "condition": "los",
+    "dr_db": 10,
+    "n": 60,
+    "visible_mean": 1.2,
+    "ds_median_m": 0.2884785023539159,
+    "asa_median": 0.14082610750513283,
+    "asd_median": 0.14239979167332759,
+    "taps_median": 32.0,
+    "pg_omni_median_db": -103.78350427394182
+  },
+  {
+    "condition": "los",
+    "dr_db": 15,
+    "n": 60,
+    "visible_mean": 1.5166666666666666,
+    "ds_median_m": 0.32118832104465567,
+    "asa_median": 0.15338096826436526,
+    "asd_median": 0.1558592903935997,
+    "taps_median": 45.0,
+    "pg_omni_median_db": -103.12023924384161
+  },
+  {
+    "condition": "los",
+    "dr_db": 20,
+    "n": 60,
+    "visible_mean": 2.1,
+    "ds_median_m": 0.45971250379738754,
+    "asa_median": 0.14137495532156127,
+    "asd_median": 0.14697133291311726,
+    "taps_median": 58.0,
+    "pg_omni_median_db": -102.26869496150803
+  },
+  {
+    "condition": "los",
+    "dr_db": 25,
+    "n": 60,
+    "visible_mean": 3.433333333333333,
+    "ds_median_m": 1.0446372343331989,
+    "asa_median": 0.1508649090956157,
+    "asd_median": 0.20051271778018537,
+    "taps_median": 96.0,
+    "pg_omni_median_db": -101.89940695009439
+  },
+  {
+    "condition": "los",
+    "dr_db": 30,
+    "n": 60,
+    "visible_mean": 5.466666666666667,
+    "ds_median_m": 2.1598945868972486,
+    "asa_median": 0.18120121717049742,
+    "asd_median": 0.21263744916743058,
+    "taps_median": 156.0,
+    "pg_omni_median_db": -101.70835253176145
+  },
+  {
+    "condition": "los",
+    "dr_db": 35,
+    "n": 60,
+    "visible_mean": 7.383333333333334,
+    "ds_median_m": 2.569433418583534,
+    "asa_median": 0.2038628470230774,
+    "asd_median": 0.24603130078711383,
+    "taps_median": 261.0,
+    "pg_omni_median_db": -101.60259187140336
+  },
+  {
+    "condition": "nlos",
+    "dr_db": 5,
+    "n": 60,
+    "visible_mean": 2.85,
+    "ds_median_m": 0.14886417098339177,
+    "asa_median": 0.09274219836922473,
+    "asd_median": 0.09771963276615098,
+    "taps_median": 0.0,
+    "pg_omni_median_db": -Infinity
+  },
+  {
+    "condition": "nlos",
+    "dr_db": 10,
+    "n": 60,
+    "visible_mean": 6.616666666666666,
+    "ds_median_m": 5.913151273917855,
+    "asa_median": 0.3935202022301374,
+    "asd_median": 0.4881969468814263,
+    "taps_median": 20.5,
+    "pg_omni_median_db": -125.11329383600132
+  },
+  {
+    "condition": "nlos",
+    "dr_db": 15,
+    "n": 60,
+    "visible_mean": 14.5,
+    "ds_median_m": 15.932640711930777,
+    "asa_median": 0.8419075436255847,
+    "asd_median": 0.7770591301619111,
+    "taps_median": 143.0,
+    "pg_omni_median_db": -121.46238644450001
+  },
+  {
+    "condition": "nlos",
+    "dr_db": 20,
+    "n": 60,
+    "visible_mean": 27.716666666666665,
+    "ds_median_m": 19.584573544747542,
+    "asa_median": 0.89723047772583,
+    "asd_median": 0.8172134193961178,
+    "taps_median": 338.0,
+    "pg_omni_median_db": -120.98352713197124
+  },
+  {
+    "condition": "nlos",
+    "dr_db": 25,
+    "n": 60,
+    "visible_mean": 38.53333333333333,
+    "ds_median_m": 20.991146837335116,
+    "asa_median": 0.9106760440146113,
+    "asd_median": 0.8643167114995034,
+    "taps_median": 643.5,
+    "pg_omni_median_db": -120.45870228231169
+  },
+  {
+    "condition": "nlos",
+    "dr_db": 30,
+    "n": 60,
+    "visible_mean": 50.516666666666666,
+    "ds_median_m": 22.305947037386623,
+    "asa_median": 0.9238799063061272,
+    "asd_median": 0.8881772952457633,
+    "taps_median": 1247.5,
+    "pg_omni_median_db": -120.15437740047994
+  },
+  {
+    "condition": "nlos",
+    "dr_db": 35,
+    "n": 60,
+    "visible_mean": 60.4,
+    "ds_median_m": 22.818087323882956,
+    "asa_median": 0.9283715739502645,
+    "asd_median": 0.891654854819278,
+    "taps_median": 2337.0,
+    "pg_omni_median_db": -119.99300560826384
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "profile": "standard",
+  "seed": 20260723,
+  "n_per_dr": 60,
+  "dr_db": [
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35
+  ],
+  "distances": "measured link distances [21], cycled",
+  "common_random_numbers": true
+}

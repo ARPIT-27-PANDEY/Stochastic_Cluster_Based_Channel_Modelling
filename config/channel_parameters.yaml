@@ -1,0 +1,147 @@
+# =============================================================================
+# Channel-model parameters for the 145 GHz sub-THz outdoor D2D cluster model
+#
+# Source: Z. Cheng, N. A. Abbasi, J. Gomez-Ponce, J. Zhang, A. F. Molisch,
+# "Stochastic Cluster-Based Channel Modeling for Sub-Terahertz Outdoor
+# Device-to-Device Radio Propagation at 145 GHz", IEEE Trans. Wireless Commun.,
+# vol. 25, pp. 20883-20899, 2026, doi:10.1109/TWC.2026.3714332.
+#
+# PRIMARY values = Table I of the paper (consolidated model summary).
+# ALTERNATIVE values = numbers quoted elsewhere in the paper text that differ
+# from Table I. They are kept here (never silently merged) and can be selected
+# with `arrival_time_source: text` etc. See docs/PAPER_ANALYSIS.md, Sec. 15.
+#
+# Units: delays / delay spreads / arrival times in METRES of run length
+# (the paper's convention, 1 ns = 0.2998 m); angles in RADIANS; powers in dB.
+# =============================================================================
+
+measurement:
+  carrier_frequency_hz: 145.5e9      # centre of the 145-146 GHz sweep (paper title says "145 GHz")
+  f_start_hz: 145.0e9
+  f_stop_hz: 146.0e9
+  bandwidth_hz: 1.0e9
+  n_subcarriers: 1001
+  delay_resolution_s: 1.0e-9         # Fourier resolution = 1/B
+  delay_resolution_m: 0.29979        # c / B
+  max_excess_runlength_m: 300.0      # aliasing-free range (Sec. III-A)
+  antenna_hpbw_deg: 13.0
+  angular_step_deg: 10.0             # Tx and Rx rotor steps
+  antenna_height_m: 1.5
+  dynamic_range_db: 35.0             # uniform threshold below the ADPS maximum (Sec. IV-A)
+  n_los_locations: 21
+  n_nlos_locations: 17
+  distance_range_los_m: [1.0, 100.0] # Sec. VII
+  distance_range_nlos_m: [2.0, 100.0]
+  # Direct Tx-Rx distances of the 21 LoS / 17 NLoS location pairs, Table II of [21]
+  # (N. A. Abbasi et al., arXiv:2109.13693v1).  The present paper mentions a 0.9 m LoS
+  # spacing where [21] lists 1 m; the [21] values are used unchanged.
+  measured_distances_los_m: [2.5, 10, 14, 24, 35, 60, 80, 93, 1, 2, 5, 15, 60, 80, 98.4, 25, 35, 40, 40, 28, 28]
+  measured_distances_nlos_m: [2.25, 7, 10, 27, 25, 23, 60, 80, 93, 25, 35, 35, 40, 40, 60, 80, 97.59]
+
+speed_of_light_m_s: 299792458.0
+
+# -----------------------------------------------------------------------------
+# Table I  (three cluster classes: dominant LoS cluster, other clusters in LoS
+# channels ("los"), all clusters in NLoS channels ("nlos"))
+# Gamma(a, b): f(x) = x^(a-1) exp(-x/b) / (b^a Gamma(a))   (a = shape, b = scale)
+# LogN(mu, sigma): ln(X) ~ Normal(mu, sigma^2)
+# -----------------------------------------------------------------------------
+cluster_number:
+  los_dominant: 1                    # always exactly one LoS cluster in LoS channels
+  los_additional: {shape: 3.39, scale: 3.35}         # N_LoS (excluding LoS cluster), may be 0
+  nlos_minus_one: {shape: 1.89, scale: 46.72}        # N'_NLoS = N_NLoS - 1
+  rounding: nearest                  # footnote 3: Gamma draws rounded to nearest integer
+
+arrival_time_m:
+  source: table                      # 'table' (primary) or 'text' (Sec. V-B wording)
+  table:
+    los:  {shape: 0.86, scale: 32.40}
+    nlos: {shape: 1.51, scale: 35.00}
+  text:
+    los:  {shape: 0.83, scale: 33.36}
+    nlos: {shape: 1.46, scale: 36.31}
+
+delay_spread_m:                      # intra-cluster delay spread S_tau,c  ~ LogN(mu, sigma)
+  los_cluster: {mu: -1.42, sigma: 0.43}
+  los:         {mu: -1.42, sigma: 0.52}
+  nlos:        {mu: -0.79, sigma: 0.89}
+
+doa_centroid_rad:
+  los_cluster: {type: fixed, value: 0.0}
+  los:  {type: bimodal_laplace, weights: [0.734, 0.266], centers: [0.0, 3.141592653589793], decays: [0.292, 0.068]}
+  nlos: {type: uniform}
+dod_centroid_rad:
+  los_cluster: {type: fixed, value: 0.0}
+  los:  {type: bimodal_laplace, weights: [0.318, 0.682], centers: [0.0, 3.141592653589793], decays: [0.151, 1.988]}
+  nlos: {type: uniform}
+# How Eq. (3) is turned into a proper sampling density on the circle:
+#   'truncated' : normalised version of Eq. (3) exactly as written (modulo-2pi differences)
+#   'wrapped'   : Laplace mixture on the real line wrapped onto [-pi, pi)
+bimodal_laplace_mode: truncated
+
+doa_spread:                          # intra-cluster DoA angular spread (unitless, Fleury) ~ LogN
+  los_cluster: {mu: -1.98, sigma: 0.042}
+  los:         {mu: -2.30, sigma: 0.29}
+  nlos:        {mu: -2.18, sigma: 0.35}
+dod_spread:
+  los_cluster: {mu: -1.96, sigma: 0.048}
+  los:         {mu: -2.26, sigma: 0.32}
+  nlos:        {mu: -2.17, sigma: 0.38}
+
+cluster_power:                       # NCP[dB] ~ N(alpha + 10 beta log10(d/dLoS), (rho + 10 eta log10(d/dLoS))^2)
+  los_cluster: {alpha: 7.63,   beta: 0.0,   rho: 1.85,  eta: 0.0}
+  los:         {alpha: -20.69, beta: -1.19, rho: 9.26,  eta: -0.17}
+  nlos:        {alpha: -33.41, beta: -1.81, rho: 10.39, eta: -0.035}
+  min_sigma_db: 0.1                  # numerical floor for sigma (never reached inside the fitted range)
+
+# -----------------------------------------------------------------------------
+# Parameter-estimation settings for the truncated-normal MLE (Sec. V-F)
+# -----------------------------------------------------------------------------
+power_mle:
+  n_bins: 20                         # N_b distance-ratio bins
+  ratio_range_db: [0.0, 20.0]
+  min_bin_fraction: 0.01             # Eq. (10) says 1 %, the sentence before it says 2 % -> configurable
+  min_bin_fraction_text: 0.02
+  learning_rate: 1.0e-3              # paper value
+  max_iterations: 200000
+  tol_llf: 1.0e-10
+  n_starts: 8
+  start_box: {alpha: [-50.0, 10.0], beta: [-4.0, 1.0], rho: [2.0, 15.0], eta: [-0.5, 0.2]}
+
+# -----------------------------------------------------------------------------
+# Clustering settings (Sec. IV-B, Algorithm 1)
+# -----------------------------------------------------------------------------
+clustering:
+  smoothing_window_delay_bins: 5
+  smoothing_window_angle_bins: 3
+  dip_to_peak_ratio: 0.8
+  threshold_start: 1.0
+  threshold_step: 0.01
+  initial_connectivity_threshold: 0.5   # NOT specified numerically in the paper ("chosen conservatively")
+  max_levels: 6
+  min_cluster_taps_to_split: 4
+  oversampling_rate: 5                  # N_os, NOT specified numerically in the paper
+
+# -----------------------------------------------------------------------------
+# Published reference values (benchmarks only - never used as outputs)
+# -----------------------------------------------------------------------------
+published_benchmarks:
+  cvm:
+    delay:  {los: 0.004, nlos: 0.007}
+    doa:    {los: 0.007, nlos: 0.020}
+    dod:    {los: 0.003, nlos: 0.029}
+  path_loss_table_ii:
+    alpha_beta:   # columns: alpha_[21], alpha, alpha_CI, beta_[21], beta, beta_CI, sigma_[21], sigma, sigma_CI
+      los_omni:     {alpha_ref: 76.86, alpha: 76.37, alpha_ci: [73.36, 79.38], beta_ref: 1.77, beta: 1.80, beta_ci: [1.61, 1.98], sigma_ref: 1.28, sigma: 1.98, sigma_ci: [1.66, 2.47]}
+      los_maxdir:   {alpha_ref: 76.68, alpha: 76.34, alpha_ci: [73.26, 79.41], beta_ref: 1.84, beta: 1.82, beta_ci: [1.63, 2.00], sigma_ref: 1.63, sigma: 2.02, sigma_ci: [1.69, 2.51]}
+      nlos_omni:    {alpha_ref: 95.84, alpha: 96.22, alpha_ci: [85.63, 106.8], beta_ref: 1.57, beta: 1.56, beta_ci: [0.91, 2.21], sigma_ref: 5.07, sigma: 6.98, sigma_ci: [5.84, 8.68]}
+      nlos_maxdir:  {alpha_ref: 99.69, alpha: 99.62, alpha_ci: [87.42, 111.8], beta_ref: 1.54, beta: 1.61, beta_ci: [0.87, 2.36], sigma_ref: 7.03, sigma: 8.04, sigma_ci: [6.73, 10.00]}
+    close_in:     # n_mea, n_mea_CI, sigma_mea, sigma_mea_CI, n_fit, n_fit_CI, sigma_fit, sigma_fit_CI
+      los_omni:     {n_mea: 1.83, n_mea_ci: [1.78, 1.87], sigma_mea: 1.37, sigma_mea_ci: [1.05, 1.96], n_fit: 1.86, n_fit_ci: [1.83, 1.90], sigma_fit: 2.00, sigma_fit_ci: [1.67, 2.48]}
+      los_maxdir:   {n_mea: 1.90, n_mea_ci: [1.84, 1.96], sigma_mea: 1.83, sigma_mea_ci: [1.41, 2.62], n_fit: 1.88, n_fit_ci: [1.85, 1.92], sigma_fit: 2.04, sigma_fit_ci: [1.70, 2.53]}
+      nlos_omni:    {n_mea: 2.86, n_mea_ci: [2.64, 3.08], sigma_mea: 7.38, sigma_mea_ci: [5.54, 11.07], n_fit: 2.92, n_fit_ci: [2.78, 3.07], sigma_fit: 8.05, sigma_fit_ci: [6.74, 10.00]}
+      nlos_maxdir:  {n_mea: 3.05, n_mea_ci: [2.77, 3.33], sigma_mea: 9.33, sigma_mea_ci: [7.01, 14.00], n_fit: 3.18, n_fit_ci: [3.02, 3.35], sigma_fit: 9.29, sigma_fit_ci: [7.78, 11.55]}
+  ncp_sigma_coverage:   # Sec. V-F-2: share of observed clusters inside +-1 sigma / +-3 sigma
+    los:  {one_sigma: 0.7155, three_sigma: 0.9916, expected_one_sigma: 0.746, expected_three_sigma: 0.998}
+    nlos: {one_sigma: 0.6779, three_sigma: 0.9934, expected_one_sigma: 0.717, expected_three_sigma: 0.998}
+  ld_setting_mean_cluster_number: {los: 3, nlos: 9, dynamic_range_db: 15}

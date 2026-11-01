@@ -1,0 +1,34 @@
+22:02:49 INFO loaded cached data set standard_val_los (600 realizations)
+22:02:50 INFO loaded cached data set standard_val_nlos (600 realizations)
+22:02:50 INFO CvM table:
+  metric condition  published_cvm  recomputed_paper_cvm  ours_vs_measured_cvm  null_cvm_95  median_ours  median_measured
+0  delay       los          0.004              0.005692              0.015543     0.022967     2.896031         5.280930
+1    doa       los          0.007              0.008901              0.034737     0.022828     0.187922         0.254079
+2    dod       los          0.003              0.004288              0.005300     0.021736     0.226949         0.226222
+3  delay      nlos          0.007              0.004580              0.031043     0.025158    22.126472        17.468300
+4    doa      nlos          0.020              0.015300              0.089709     0.029029     0.891959         0.565845
+5    dod      nlos          0.029              0.022793              0.137415     0.027536     0.888934         0.538676
+22:02:50 INFO loaded cached data set standard_pl_los (600 realizations)
+22:02:51 INFO loaded cached data set standard_pl_nlos (600 realizations)
+22:02:51 INFO Path loss (Table II):
+           case  parameter  measured_ref_[21]  published_synthetic  ours_median_over_repeats  ours_p2.5  ours_p97.5  share_repeats_ci_overlap_published
+0      los_omni      alpha              76.86                76.37                 72.188987  70.543166   74.601786                               0.800
+1      los_omni       beta               1.77                 1.80                  1.955327   1.821148    2.062114                               0.995
+2      los_omni   sigma_ab               1.28                 1.98                  1.758130   1.390291    2.108282                               0.975
+3      los_omni      n_cim               1.83                 1.86                  1.747084   1.715455    1.775676                               0.000
+4      los_omni  sigma_cim               1.37                 2.00                  1.962136   1.593659    2.331730                               1.000
+5    los_maxdir      alpha              76.68                76.34                 72.191020  70.406234   74.426558                               0.875
+6    los_maxdir       beta               1.84                 1.82                  1.968375   1.843341    2.095337                               0.990
+7    los_maxdir   sigma_ab               1.63                 2.02                  1.824784   1.512178    2.209500                               1.000
+8    los_maxdir      n_cim               1.90                 1.88                  1.766442   1.732420    1.799050                               0.005
+9    los_maxdir  sigma_cim               1.83                 2.04                  2.024877   1.656681    2.399572                               1.000
+10    nlos_omni      alpha              95.84                96.22                105.056009  97.181816  112.837171                               0.995
+11    nlos_omni       beta               1.57                 1.56                  1.029639   0.569380    1.483788                               0.990
+12    nlos_omni   sigma_ab               5.07                 6.98                  5.727823   4.535024    7.646903                               0.935
+13    nlos_omni      n_cim               2.86                 2.92                  2.753446   2.657690    2.862825                               0.975
+14    nlos_omni  sigma_cim               7.38                 8.05                  8.933734   6.530239   12.072072                               0.965
+15  nlos_maxdir      alpha              99.69                99.62                107.780779  98.575827  117.450388                               1.000
+16  nlos_maxdir       beta               1.54                 1.61                  1.071319   0.529720    1.610609                               0.990
+17  nlos_maxdir   sigma_ab               7.03                 8.04                  6.402229   5.124752    7.857761                               0.925
+18  nlos_maxdir      n_cim               3.05                 3.18                  2.992965   2.869885    3.110405                               0.975
+19  nlos_maxdir  sigma_cim               9.33                 9.29                  9.981461   7.569740   13.012642                               0.995
