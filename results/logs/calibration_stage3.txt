@@ -1,0 +1,7 @@
+16:42:30 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0356 | medians DS 4.27 m ASA 0.210 ASD 0.276 | visible 8.2
+16:43:52 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': -0.57} -> score 0.0356 | medians DS 4.27 m ASA 0.210 ASD 0.276 | visible 8.2
+16:44:36 INFO stage3 los: n_CI 1.710 -> 1.860 (target 1.86), common level -2.57 dB; CvM sum 0.0356 -> 0.0356
+16:45:13 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': -17.05} -> score 0.0180 | medians DS 16.47 m ASA 0.768 ASD 0.740 | visible 27.8
+16:46:59 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': -17.05} -> score 0.0180 | medians DS 16.47 m ASA 0.768 ASD 0.740 | visible 27.8
+16:48:10 INFO stage3 nlos: n_CI 2.920 -> 2.920 (target 2.92), common level -0.00 dB; CvM sum 0.0180 -> 0.0180
+16:48:10 INFO stage 3 knobs: {'los': {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': -0.57, 'lc_alpha_shift': -2.57}, 'nlos': {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': -17.05}} -> C:\Users\admin\Desktop\Bodhi_Project\sub-thz-d2d-channel-model\config\channel_parameters_calibrated.yaml

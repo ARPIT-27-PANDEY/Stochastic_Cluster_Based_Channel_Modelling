@@ -1,0 +1,40 @@
+15:27:49 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0585 | medians DS 3.16 m ASA 0.187 ASD 0.235 | visible 7.4
+15:28:30 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0356 | medians DS 4.27 m ASA 0.210 ASD 0.276 | visible 8.2
+15:29:08 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 4.0} -> score 0.0537 | medians DS 5.34 m ASA 0.240 ASD 0.320 | visible 8.9
+15:29:48 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 6.0} -> score 0.1030 | medians DS 7.26 m ASA 0.278 ASD 0.386 | visible 9.5
+15:30:35 INFO los {'count_scale': 1.3, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0535 | medians DS 5.43 m ASA 0.240 ASD 0.311 | visible 11.0
+15:31:21 INFO los {'count_scale': 1.6, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0624 | medians DS 5.67 m ASA 0.263 ASD 0.367 | visible 12.6
+15:32:02 INFO los {'count_scale': 1.0, 'rho_scale': 0.8, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0428 | medians DS 3.32 m ASA 0.198 ASD 0.249 | visible 8.6
+15:32:43 INFO los {'count_scale': 1.0, 'rho_scale': 1.2, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0503 | medians DS 5.34 m ASA 0.227 ASD 0.298 | visible 7.9
+15:32:43 INFO los sweep 1 best {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0} score 0.0356
+15:33:18 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0585 | medians DS 3.16 m ASA 0.187 ASD 0.235 | visible 7.4
+15:33:57 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 4.0} -> score 0.0537 | medians DS 5.34 m ASA 0.240 ASD 0.320 | visible 8.9
+15:34:33 INFO los {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 6.0} -> score 0.1030 | medians DS 7.26 m ASA 0.278 ASD 0.386 | visible 9.5
+15:35:56 INFO los {'count_scale': 1.3, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0535 | medians DS 5.43 m ASA 0.240 ASD 0.311 | visible 11.0
+15:37:29 INFO los {'count_scale': 1.6, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0624 | medians DS 5.67 m ASA 0.263 ASD 0.367 | visible 12.6
+15:38:44 INFO los {'count_scale': 1.0, 'rho_scale': 0.8, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0428 | medians DS 3.32 m ASA 0.198 ASD 0.249 | visible 8.6
+15:39:56 INFO los {'count_scale': 1.0, 'rho_scale': 1.2, 'beta_scale': 1.0, 'alpha_shift': 2.0} -> score 0.0503 | medians DS 5.34 m ASA 0.227 ASD 0.298 | visible 7.9
+15:39:56 INFO los sweep 2 best {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0} score 0.0356
+15:42:56 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.1820 | medians DS 21.91 m ASA 0.920 ASD 0.906 | visible 60.7
+15:45:21 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.2, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0963 | medians DS 20.79 m ASA 0.890 ASD 0.866 | visible 49.0
+15:47:15 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.4, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0467 | medians DS 18.49 m ASA 0.843 ASD 0.800 | visible 38.6
+15:48:54 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0180 | medians DS 16.47 m ASA 0.768 ASD 0.740 | visible 27.8
+15:50:04 INFO nlos {'count_scale': 1.0, 'rho_scale': 2.0, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0272 | medians DS 14.81 m ASA 0.688 ASD 0.685 | visible 20.6
+15:51:23 INFO nlos {'count_scale': 1.0, 'rho_scale': 2.4, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0632 | medians DS 12.41 m ASA 0.584 ASD 0.572 | visible 15.9
+15:52:27 INFO nlos {'count_scale': 0.25, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0724 | medians DS 12.96 m ASA 0.556 ASD 0.555 | visible 10.4
+15:53:33 INFO nlos {'count_scale': 0.4, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0237 | medians DS 14.87 m ASA 0.689 ASD 0.682 | visible 14.2
+15:54:43 INFO nlos {'count_scale': 0.6, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0290 | medians DS 15.07 m ASA 0.704 ASD 0.700 | visible 18.5
+15:56:06 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.4, 'alpha_shift': 0.0} -> score 0.0198 | medians DS 15.36 m ASA 0.751 ASD 0.720 | visible 26.6
+15:57:28 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.8, 'alpha_shift': 0.0} -> score 0.0331 | medians DS 13.68 m ASA 0.728 ASD 0.761 | visible 25.7
+15:57:28 INFO nlos sweep 1 best {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} score 0.0180
+15:59:19 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.2, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0963 | medians DS 20.79 m ASA 0.890 ASD 0.866 | visible 49.0
+16:00:25 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.4, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0467 | medians DS 18.49 m ASA 0.843 ASD 0.800 | visible 38.6
+16:01:08 INFO nlos {'count_scale': 1.0, 'rho_scale': 2.0, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0272 | medians DS 14.81 m ASA 0.688 ASD 0.685 | visible 20.6
+16:01:44 INFO nlos {'count_scale': 1.0, 'rho_scale': 2.4, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0632 | medians DS 12.41 m ASA 0.584 ASD 0.572 | visible 15.9
+16:02:15 INFO nlos {'count_scale': 0.25, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0724 | medians DS 12.96 m ASA 0.556 ASD 0.555 | visible 10.4
+16:02:49 INFO nlos {'count_scale': 0.4, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0237 | medians DS 14.87 m ASA 0.689 ASD 0.682 | visible 14.2
+16:03:28 INFO nlos {'count_scale': 0.6, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} -> score 0.0290 | medians DS 15.07 m ASA 0.704 ASD 0.700 | visible 18.5
+16:04:14 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.4, 'alpha_shift': 0.0} -> score 0.0198 | medians DS 15.36 m ASA 0.751 ASD 0.720 | visible 26.6
+16:04:58 INFO nlos {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.8, 'alpha_shift': 0.0} -> score 0.0331 | medians DS 13.68 m ASA 0.728 ASD 0.761 | visible 25.7
+16:04:58 INFO nlos sweep 2 best {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0} score 0.0180
+16:04:59 INFO calibrated knobs: {'los': {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0}, 'nlos': {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0}} -> C:\Users\admin\Desktop\Bodhi_Project\sub-thz-d2d-channel-model\config\channel_parameters_calibrated.yaml

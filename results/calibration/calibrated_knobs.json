@@ -1,0 +1,15 @@
+{
+  "los": {
+    "count_scale": 1.0,
+    "rho_scale": 1.0,
+    "beta_scale": 1.0,
+    "alpha_shift": -0.57,
+    "lc_alpha_shift": -2.57
+  },
+  "nlos": {
+    "count_scale": 1.0,
+    "rho_scale": 1.7,
+    "beta_scale": 1.0,
+    "alpha_shift": -17.05
+  }
+}

@@ -1,0 +1,4 @@
+17:05:14 INFO calibrated_val_los.csv: 210 channels in 1009 s (GNU Radio, 4 processes)
+17:08:32 INFO calibrated_pl_los.csv: 300 channels in 198 s (GNU Radio, 4 processes)
+17:10:01 INFO calibrated_val_nlos.csv: 170 channels in 89 s (GNU Radio, 4 processes)
+17:16:12 INFO calibrated_pl_nlos.csv: 300 channels in 371 s (GNU Radio, 4 processes)

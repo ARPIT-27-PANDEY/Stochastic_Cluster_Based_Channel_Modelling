@@ -1,0 +1,4 @@
+15:38:18 INFO table1_val_los.csv: 210 channels in 213 s (GNU Radio, 4 processes)
+15:43:09 INFO table1_pl_los.csv: 300 channels in 291 s (GNU Radio, 4 processes)
+15:49:27 INFO table1_val_nlos.csv: 170 channels in 378 s (GNU Radio, 4 processes)
+15:59:20 INFO table1_pl_nlos.csv: 300 channels in 594 s (GNU Radio, 4 processes)

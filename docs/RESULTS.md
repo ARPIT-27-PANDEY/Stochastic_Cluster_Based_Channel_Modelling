@@ -46,7 +46,8 @@ Full CvM table: `results/tables/cvm_validation.csv`.
   (88 clusters, uniform centroids, NCP sigma ~ 10 dB) leave many off-boresight clusters
   within 35 dB. Experiment 7 shows that the ambiguous parameters (Table I vs text arrival
   times, normalised vs wrapped Laplace) change the CvM values only marginally; they do not
-  explain the gap. We did not tune parameters to close it (LIMITATIONS.md item 9).
+  explain the gap. With the published Table I the gap stays; the labelled calibrated set of
+  Section 5 closes it (LIMITATIONS.md items 9, 18).
 * **Path loss** is consistent with Table II in most parameters within the (wide) 50-channel
   confidence intervals; the LoS level is ~3 dB lower than [21] over 1-100 m, so the narrow
   CI-model exponent interval does not overlap.
@@ -66,3 +67,31 @@ needed at most 3 sweeps in all 2400 standard-profile channels.
 classification. Figures 2, 6, 10, 11 and 17 overlay digitised published curves; Figures 3-5,
 7-9 and 12-13 show the published model and our simulated draws only; Figures 14-16 are
 reproduced independently.
+
+## 5. GNU Radio implementation (results/gnuradio/)
+The channel model runs inside two GNU Radio 3.10 flowgraphs (`gnuradio/`, see gnuradio/README.md).
+`scripts/run_gnuradio.py` sounded 1960 channels through the no-GUI sounder flowgraph (VNA sweep ->
+noise -> IFFT -> |.|^2/N_f -> ADPS -> 35 dB taps): per parameter set 210 LoS / 170 NLoS at the measured
+link distances and 300 per condition at d ~ U(1, 100) m.
+
+**Sounder chain verification:** median |GNU Radio - generator| <= 0.36 % for the spreads and <= 0.004 dB
+for the path gains (`gr_sounder_verification.csv`).
+
+**Fig. 17 (omega^2 vs measured; sampling null 95 % about 0.023 LoS / 0.03 NLoS):**
+
+| statistic | paper (published) | GNU Radio, Table I | GNU Radio, calibrated |
+|---|---|---|---|
+| LoS delay | 0.004 | 0.0138 | 0.0037 |
+| LoS DoA | 0.007 | 0.0337 | 0.0132 |
+| LoS DoD | 0.003 | 0.0029 | 0.0110 |
+| NLoS delay | 0.007 | 0.0265 | 0.0070 |
+| NLoS DoA | 0.020 | 0.0756 | 0.0041 |
+| NLoS DoD | 0.029 | 0.1176 | 0.0121 |
+
+Table I: 3 of 6 within the null; calibrated: 6 of 6.
+
+**Table II (omni, median of 50-channel fits; paper synthetic in brackets):** calibrated LoS alpha 74.2
+(76.37), beta 1.96 (1.80), n 1.87 (1.86); NLoS alpha 105.1 (96.22), beta 1.16 (1.56), n 2.88 (2.92).
+The 95 % CIs overlap the paper's in >= 71 % of repeats for every parameter (`gr_pathloss.csv`). With
+Table I the LoS close-in exponent was 1.74 with no CI overlap.
+

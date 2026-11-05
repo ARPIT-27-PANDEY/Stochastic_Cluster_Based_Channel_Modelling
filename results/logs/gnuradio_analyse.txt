@@ -1,0 +1,38 @@
+17:17:56 INFO CvM:
+  metric condition  paper_published_cvm  paper_recomputed_cvm  median_measured  median_paper_synthetic  table1_n  table1_cvm_vs_measured  table1_cvm_vs_paper_synthetic  table1_median  table1_null95  calibrated_n  calibrated_cvm_vs_measured  calibrated_cvm_vs_paper_synthetic  calibrated_median  calibrated_null95
+0  delay       los                0.004                0.0057           5.2809                  3.7457       210                  0.0138                         0.0046         3.0515         0.0256           210                      0.0037                             0.0025             4.0540             0.0232
+1    doa       los                0.007                0.0089           0.2541                  0.2331       210                  0.0337                         0.0349         0.1920         0.0224           210                      0.0132                             0.0148             0.2190             0.0231
+2    dod       los                0.003                0.0043           0.2262                  0.2126       210                  0.0029                         0.0033         0.2311         0.0233           210                      0.0110                             0.0148             0.2745             0.0233
+3  delay      nlos                0.007                0.0046          17.4683                 18.1562       170                  0.0265                         0.0220        22.4471         0.0269           170                      0.0070                             0.0076            16.4450             0.0312
+4    doa      nlos                0.020                0.0153           0.5658                  0.7272       170                  0.0756                         0.0477         0.8619         0.0312           170                      0.0041                             0.0056             0.6882             0.0305
+5    dod      nlos                0.029                0.0228           0.5387                  0.7105       170                  0.1176                         0.0446         0.8775         0.0288           170                      0.0121                             0.0026             0.6571             0.0274
+17:17:56 INFO Path loss (omni):
+         case         set parameter  measured_[21]  paper_synthetic  paper_ci_lo  paper_ci_hi  ours_all_channels  ours_median_50ch  ours_p2.5  ours_p97.5  ci_overlap_share
+0    los_omni      table1     alpha          76.86            76.37        73.36        79.38             71.670            71.687     69.041      74.439             0.740
+1    los_omni      table1      beta           1.77             1.80         1.61         1.98              1.976             1.977      1.808       2.140             0.970
+2    los_omni      table1     sigma           1.28             1.98         1.66         2.47              1.932             1.888      1.532       2.296             1.000
+3    los_omni      table1      n_CI           1.83             1.86         1.83         1.90              1.736             1.736      1.705       1.768             0.000
+4    los_omni  calibrated     alpha          76.86            76.37        73.36        79.38             74.247            74.185     71.602      76.758             1.000
+5    los_omni  calibrated      beta           1.77             1.80         1.61         1.98              1.963             1.963      1.806       2.116             0.995
+6    los_omni  calibrated     sigma           1.28             1.98         1.66         2.47              1.989             1.929      1.516       2.436             1.000
+7    los_omni  calibrated      n_CI           1.83             1.86         1.83         1.90              1.876             1.873      1.842       1.904             1.000
+16  nlos_omni      table1     alpha          95.84            96.22        85.63       106.80            102.234           102.184     95.649     107.680             1.000
+17  nlos_omni      table1      beta           1.57             1.56         0.91         2.21              1.177             1.189      0.818       1.575             1.000
+18  nlos_omni      table1     sigma           5.07             6.98         5.84         8.68              5.678             5.740      4.450       7.116             0.945
+19  nlos_omni      table1      n_CI           2.86             2.92         2.78         3.07              2.763             2.767      2.660       2.870             0.985
+20  nlos_omni  calibrated     alpha          95.84            96.22        85.63       106.80            105.027           105.095     95.405     116.211             0.990
+21  nlos_omni  calibrated      beta           1.57             1.56         0.91         2.21              1.129             1.159      0.475       1.805             0.995
+22  nlos_omni  calibrated     sigma           5.07             6.98         5.84         8.68              9.703             9.644      7.673      11.650             0.710
+23  nlos_omni  calibrated      n_CI           2.86             2.92         2.78         3.07              2.882             2.878      2.754       3.053             1.000
+17:17:56 INFO Sounder verification:
+set         metric        
+calibrated  delay_spread_m    0.003143
+            doa_spread        0.001394
+            dod_spread        0.001567
+            pg_maxdir_db      0.003772
+            pg_omni_db        0.003558
+table1      delay_spread_m    0.003632
+            doa_spread        0.001603
+            dod_spread        0.001998
+            pg_maxdir_db      0.003640
+            pg_omni_db        0.003668

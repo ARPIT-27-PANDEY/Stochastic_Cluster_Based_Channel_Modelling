@@ -1,0 +1,529 @@
+options:
+  parameters:
+    author: Group 10 - P. Bhaskar, A. Tripathi, A. K. Pandey
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: 'Interactive GNU Radio emulator of the 145 GHz outdoor D2D cluster model (Cheng et al., IEEE TWC 2026): draws double-directional channels from Table I, shows the omni PDP and the DoA/DoD angular power spectra, and passes a 1 GHz-wide test signal through the channel impulse response with the GNU Radio FIR filter.'
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: subthz_channel_emulator
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Sub-THz 145 GHz D2D cluster channel emulator
+    window_size: (1600,1100)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 8
+    - 8
+    rotation: 0
+    state: enabled
+blocks:
+- name: import_np
+  id: import
+  parameters:
+    imports: import numpy as np
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 8.0
+    - 200.0
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    value: 1e9
+    comment: 1 GHz sounding bandwidth = 1 ns delay resolution
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 200.0
+    - 8.0
+    rotation: 0
+    state: enabled
+- name: seed
+  id: variable
+  parameters:
+    value: '20260723'
+    comment: ''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 360.0
+    - 8.0
+    rotation: 0
+    state: enabled
+- name: condition
+  id: variable_qtgui_chooser
+  parameters:
+    label: Propagation condition
+    type: string
+    value: '''los'''
+    widget: radio_buttons
+    orient: Qt.QHBoxLayout
+    num_opts: '2'
+    option0: '''los'''
+    label0: LoS
+    option1: '''nlos'''
+    label1: NLoS
+    gui_hint: 0,0,1,1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 520.0
+    - 8.0
+    rotation: 0
+    state: enabled
+- name: model
+  id: variable_qtgui_chooser
+  parameters:
+    label: Parameter set
+    type: string
+    value: ''''''
+    widget: radio_buttons
+    orient: Qt.QHBoxLayout
+    num_opts: '2'
+    option0: ''''''
+    label0: Table I (published)
+    option1: '''config/channel_parameters_calibrated.yaml'''
+    label1: Calibrated
+    gui_hint: 0,1,1,1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 720.0
+    - 8.0
+    rotation: 0
+    state: enabled
+- name: d_m
+  id: variable_qtgui_range
+  parameters:
+    label: Tx-Rx distance d_LoS (m)
+    start: '1'
+    stop: '100'
+    step: '0.5'
+    value: '20'
+    widget: counter_slider
+    rangeType: float
+    orient: QtCore.Qt.Horizontal
+    min_len: '200'
+    gui_hint: 1,0,1,1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 920.0
+    - 8.0
+    rotation: 0
+    state: enabled
+- name: index
+  id: variable_qtgui_range
+  parameters:
+    label: 'Realization #'
+    start: '0'
+    stop: '999'
+    step: '1'
+    value: '0'
+    widget: counter_slider
+    rangeType: int
+    orient: QtCore.Qt.Horizontal
+    min_len: '200'
+    gui_hint: 1,1,1,1
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 1120.0
+    - 8.0
+    rotation: 0
+    state: enabled
+- name: emu
+  id: epy_block
+  parameters:
+    _source_code: |
+      def _repo_src():
+          import os, sys
+          cands = [os.environ.get("SUBTHZ_REPO", "")]
+          try:
+              cands.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
+          except NameError:
+              pass
+          cwd = os.getcwd()
+          cands += [cwd, os.path.join(cwd, ".."), os.path.join(cwd, "..", "..")]
+          for c in cands:
+              src = os.path.join(c, "src")
+              if c and os.path.isdir(os.path.join(src, "channel_model")):
+                  if src not in sys.path:
+                      sys.path.insert(0, os.path.abspath(src))
+                  return os.path.abspath(c)
+          raise RuntimeError("cannot find the sub-thz-d2d-channel-model repository; set SUBTHZ_REPO")
+
+
+      import threading
+      import numpy as np
+      from gnuradio import gr
+
+
+      class blk(gr.sync_block):
+          """Sub-THz cluster-channel emulator (Sec. VI generator).
+
+          Outputs (one vector set per update): omni PDP [dB] (1001 x 1 ns), DoA APS and DoD APS
+          [dB] (36 x 10 deg).  taps() returns the omni channel impulse response used by the FIR
+          filter, summary() the channel metrics shown in the GUI.  A new realization is drawn
+          whenever condition, distance, realization index or parameter set change.
+          """
+
+          def __init__(self, condition="los", d_m=20.0, index=0, seed=20260723, params_file=""):
+              gr.sync_block.__init__(self, name="Sub-THz cluster channel emulator", in_sig=None,
+                                     out_sig=[(np.float32, 1001), (np.float32, 36), (np.float32, 36)])
+              self.condition, self.d_m, self.index, self.seed, self.params_file = condition, d_m, index, seed, params_file
+              self._key, self._views, self._real, self._gs = None, None, None, None
+              self._lock = threading.Lock()   # work() and the GUI probes may ask concurrently
+
+          def _update(self):
+              key = (self.condition, round(float(self.d_m), 2), int(self.index), int(self.seed), self.params_file)
+              with self._lock:
+                  if key == self._key:
+                      return
+                  if self._gs is None:
+                      _repo_src()
+                      from channel_model import gr_support
+                      self._gs = gr_support
+                  real = self._gs.realization(key[0], key[1], key[3], key[2], key[4])
+                  self._views = self._gs.emulator_views(real)
+                  self._real, self._key = real, key
+
+          def taps(self):
+              try:
+                  self._update()
+                  return list(self._views["taps"])
+              except Exception as e:  # keep the GUI alive while parameters are being edited
+                  print("emulator:", e)
+                  return [1.0 + 0j]
+
+          def summary(self):
+              try:
+                  self._update()
+                  return self._gs.emulator_summary(self._real)
+              except Exception as e:
+                  return f"generator error: {e}"
+
+          def work(self, input_items, output_items):
+              self._update()
+              n = min(len(o) for o in output_items)
+              for k, name in enumerate(("pdp_db", "aps_r_db", "aps_t_db")):
+                  output_items[k][:n] = self._views[name]
+              return n
+    condition: condition
+    d_m: d_m
+    index: index
+    seed: seed
+    params_file: model
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 8.0
+    - 260.0
+    rotation: 0
+    state: enabled
+- name: taps_probe
+  id: variable_function_probe
+  parameters:
+    block_id: emu
+    function_name: taps
+    function_args: ''
+    poll_rate: '2'
+    value: '[1.0]'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 520.0
+    - 120.0
+    rotation: 0
+    state: enabled
+- name: stats_probe
+  id: variable_function_probe
+  parameters:
+    block_id: emu
+    function_name: summary
+    function_args: ''
+    poll_rate: '2'
+    value: '''drawing channel...'''
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 720.0
+    - 120.0
+    rotation: 0
+    state: enabled
+- name: stats
+  id: variable_qtgui_label
+  parameters:
+    label: Channel
+    type: string
+    value: stats_probe
+    formatter: None
+    gui_hint: 2,0,1,2
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 920.0
+    - 120.0
+    rotation: 0
+    state: enabled
+- name: thr_vec
+  id: blocks_throttle2
+  parameters:
+    type: float
+    samples_per_second: '10'
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    vlen: '1001'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 360.0
+    - 60.0
+    rotation: 0
+    state: enabled
+- name: pdp_sink
+  id: qtgui_vector_sink_f
+  parameters:
+    name: '"Omni PDP (max over orientation pairs), 35 dB MPC range"'
+    vlen: '1001'
+    x_start: '0'
+    x_step: '1'
+    x_axis_label: '"Excess delay (ns)"'
+    y_axis_label: '"Power (dB)"'
+    ymin: '-200'
+    ymax: '-40'
+    nconnections: '1'
+    label1: '"omni PDP"'
+    color1: '"blue"'
+    width1: '1'
+    alpha1: '1.0'
+    gui_hint: 3,0,1,2
+    grid: 'True'
+    autoscale: 'True'
+    average: '1.0'
+    update_time: '0.2'
+    showports: 'False'
+    legend: 'True'
+    ref_level: '0'
+    x_units: '""'
+    y_units: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 620.0
+    - 30.0
+    rotation: 0
+    state: enabled
+- name: aps_sink
+  id: qtgui_vector_sink_f
+  parameters:
+    name: '"Angular power spectra"'
+    vlen: '36'
+    x_start: '-180'
+    x_step: '10'
+    x_axis_label: '"Angle (deg)"'
+    y_axis_label: '"Power (dB)"'
+    ymin: '-200'
+    ymax: '-40'
+    nconnections: '2'
+    label1: '"DoA (Rx)"'
+    color1: '"red"'
+    width1: '2'
+    alpha1: '1.0'
+    label2: '"DoD (Tx)"'
+    color2: '"dark green"'
+    width2: '2'
+    alpha2: '1.0'
+    gui_hint: 4,0,1,1
+    grid: 'True'
+    autoscale: 'True'
+    average: '1.0'
+    update_time: '0.2'
+    showports: 'False'
+    legend: 'True'
+    ref_level: '0'
+    x_units: '""'
+    y_units: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 620.0
+    - 290.0
+    rotation: 0
+    state: enabled
+- name: tx_sig
+  id: analog_noise_source_x
+  parameters:
+    type: complex
+    noise_type: analog.GR_GAUSSIAN
+    amp: '1'
+    seed: '3'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 8.0
+    - 720.0
+    rotation: 0
+    state: enabled
+- name: thr_sig
+  id: blocks_throttle2
+  parameters:
+    type: complex
+    samples_per_second: '2000000.0'
+    ignoretag: 'True'
+    limit: auto
+    maximum: '0.1'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 330.0
+    - 736.0
+    rotation: 0
+    state: enabled
+- name: chan_fir
+  id: fir_filter_xxx
+  parameters:
+    type: ccc
+    decim: '1'
+    taps: taps_probe
+    samp_delay: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 600.0
+    - 760.0
+    rotation: 0
+    state: enabled
+- name: spec
+  id: qtgui_freq_sink_x
+  parameters:
+    name: '"1 GHz test signal: transmitted vs after the channel (145-146 GHz)"'
+    nconnections: '2'
+    label1: Tx (white)
+    color1: '"blue"'
+    label2: Rx (through channel)
+    color2: '"red"'
+    gui_hint: 4,1,1,1
+    type: complex
+    fftsize: '4096'
+    wintype: window.WIN_BLACKMAN_hARRIS
+    fc: 145.5e9
+    bw: samp_rate
+    grid: 'True'
+    autoscale: 'False'
+    average: '0.05'
+    ymin: '-60'
+    ymax: '-20'
+    update_time: '0.20'
+    legend: 'True'
+    axislabels: 'True'
+    label: Relative Gain
+    units: dB
+    freqhalf: 'True'
+    showports: 'False'
+    ctrlpanel: 'False'
+    norm_window: 'False'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_level: '0.0'
+    tr_chan: '0'
+    tr_tag: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate:
+    - 900.0
+    - 720.0
+    rotation: 0
+    state: enabled
+connections:
+- - emu
+  - '0'
+  - thr_vec
+  - '0'
+- - thr_vec
+  - '0'
+  - pdp_sink
+  - '0'
+- - emu
+  - '1'
+  - aps_sink
+  - '0'
+- - emu
+  - '2'
+  - aps_sink
+  - '1'
+- - tx_sig
+  - '0'
+  - thr_sig
+  - '0'
+- - thr_sig
+  - '0'
+  - chan_fir
+  - '0'
+- - thr_sig
+  - '0'
+  - spec
+  - '0'
+- - chan_fir
+  - '0'
+  - spec
+  - '1'
+metadata:
+  file_format: 1
+  grc_version: 3.10.12.0

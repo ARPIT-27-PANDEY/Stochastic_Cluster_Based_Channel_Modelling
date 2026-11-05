@@ -1,13 +1,13 @@
 # sub-thz-d2d-channel-model
 
-Independent Python reproduction of
+GNU Radio reproduction (with a supporting Python channel-model library) of
 
 > Y. Cheng, N. A. Abbasi, J. Gomez-Ponce, Z. Zhang, A. F. Molisch, **"Stochastic Cluster-Based
 > Channel Modeling for Sub-Terahertz Outdoor Device-to-Device Radio Propagation at 145 GHz"**,
 > IEEE Transactions on Wireless Communications, vol. 25, pp. 20883-20899, 2026,
 > doi:10.1109/TWC.2026.3714332.
 
-## Contributors
+## Contributors - Group 10
 | Enrolment no. | Name |
 |---|---|
 | 23116075 | Piyush Bhaskar |
@@ -15,6 +15,15 @@ Independent Python reproduction of
 | 23116017 | Arpit Kumar Pandey |
 
 ## What is in here
+* **GNU Radio implementation** (`gnuradio/`, GNU Radio 3.10): a no-GUI VNA channel-sounder
+  flowgraph (cluster-model channel -> 1001-tone sweep per horn orientation -> noise -> IFFT ->
+  ADPS -> 35 dB taps -> spreads and path gains) and a QT GUI channel emulator; see gnuradio/README.md.
+  `scripts/run_gnuradio.py` runs the sounder in parallel and compares its output with the paper
+  (results/gnuradio/);
+* a **calibrated parameter set** (`scripts/calibrate_model.py` ->
+  `config/channel_parameters_calibrated.yaml`) that brings the generated NLoS spreads close to the
+  paper's synthetic Fig. 17 curves. It is a fit to the paper's published outputs, labelled
+  "calibrated" everywhere; the published Table I is never changed and its results are always shown too;
 * the complete measurement-side processing chain (ADPS of Eq. 1 with delay oversampling, 35 dB
   MPC taps, KPD and multi-level KPD clustering);
 * the Table I statistical cluster model, the truncation-aware cluster-power MLE (Eqs. 10-11);
@@ -56,10 +65,12 @@ r.metrics             # delay / angular spreads, omni and max-dir path gain, num
 
 ## Layout
 ```
+gnuradio/      GRC flowgraphs (sounder, emulator), their generator and screenshot scripts
 config/        channel_parameters.yaml (Table I + paper alternatives + published benchmarks), simulation_config.yaml
 src/channel_model/  parameters, distributions, adps, mpc_extraction, kpd_clustering, cluster_model, power_model,
                dynamic_range, inverse_mapping, channel_generator, channel_metrics, path_loss, validation, digitize
-scripts/       generate_channels, validate_model, run_experiments, reproduce_figures, digitize_published_figures
+scripts/       generate_channels, validate_model, run_experiments, reproduce_figures, digitize_published_figures,
+               run_gnuradio, calibrate_model
 tests/         pytest suite (distributions, cluster model, ADPS/clustering, dynamic range, inverse mapping,
                validation, integration)
 notebooks/     01-04 walkthroughs

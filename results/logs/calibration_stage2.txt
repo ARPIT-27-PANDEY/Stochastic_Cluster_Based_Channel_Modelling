@@ -1,0 +1,19 @@
+16:06:51 INFO stage2 lc -5.0 ash 2.0 -> CvM sum 0.1286, PL alpha 77.27 beta 1.86 rms 1.50 dB -> score2 0.1512
+16:08:11 INFO stage2 lc -5.0 ash 3.0 -> CvM sum 0.1565, PL alpha 77.21 beta 1.84 rms 1.30 dB -> score2 0.1734
+16:09:22 INFO stage2 lc -5.0 ash 4.0 -> CvM sum 0.1901, PL alpha 77.12 beta 1.83 rms 1.07 dB -> score2 0.2014
+16:10:42 INFO stage2 lc -4.0 ash 2.0 -> CvM sum 0.1030, PL alpha 76.32 beta 1.87 rms 0.75 dB -> score2 0.1086
+16:11:56 INFO stage2 lc -4.0 ash 3.0 -> CvM sum 0.1286, PL alpha 76.27 beta 1.86 rms 0.57 dB -> score2 0.1319
+16:13:07 INFO stage2 lc -4.0 ash 4.0 -> CvM sum 0.1565, PL alpha 76.21 beta 1.84 rms 0.38 dB -> score2 0.1579
+16:14:18 INFO stage2 lc -3.0 ash 2.0 -> CvM sum 0.0714, PL alpha 75.36 beta 1.88 rms 0.52 dB -> score2 0.0741
+16:15:28 INFO stage2 lc -3.0 ash 3.0 -> CvM sum 0.1030, PL alpha 75.32 beta 1.87 rms 0.54 dB -> score2 0.1059
+16:16:39 INFO stage2 lc -3.0 ash 4.0 -> CvM sum 0.1286, PL alpha 75.27 beta 1.86 rms 0.63 dB -> score2 0.1326
+16:17:49 INFO stage2 lc -2.0 ash 2.0 -> CvM sum 0.0537, PL alpha 74.39 beta 1.89 rms 1.22 dB -> score2 0.0687
+16:18:59 INFO stage2 lc -2.0 ash 3.0 -> CvM sum 0.0714, PL alpha 74.36 beta 1.88 rms 1.31 dB -> score2 0.0887
+16:20:11 INFO stage2 lc -2.0 ash 4.0 -> CvM sum 0.1030, PL alpha 74.32 beta 1.87 rms 1.43 dB -> score2 0.1233
+16:21:18 INFO stage2 lc -1.0 ash 2.0 -> CvM sum 0.0400, PL alpha 73.41 beta 1.89 rms 2.09 dB -> score2 0.0835
+16:22:28 INFO stage2 lc -1.0 ash 3.0 -> CvM sum 0.0537, PL alpha 73.39 beta 1.89 rms 2.17 dB -> score2 0.1009
+16:23:38 INFO stage2 lc -1.0 ash 4.0 -> CvM sum 0.0714, PL alpha 73.36 beta 1.88 rms 2.28 dB -> score2 0.1232
+16:24:44 INFO stage2 lc +0.0 ash 2.0 -> CvM sum 0.0356, PL alpha 72.44 beta 1.90 rms 2.99 dB -> score2 0.1248
+16:25:52 INFO stage2 lc +0.0 ash 3.0 -> CvM sum 0.0400, PL alpha 72.41 beta 1.89 rms 3.06 dB -> score2 0.1337
+16:27:00 INFO stage2 lc +0.0 ash 4.0 -> CvM sum 0.0537, PL alpha 72.39 beta 1.89 rms 3.15 dB -> score2 0.1531
+16:27:01 INFO stage 2 knobs: {'los': {'count_scale': 1.0, 'rho_scale': 1.0, 'beta_scale': 1.0, 'alpha_shift': 2.0, 'lc_alpha_shift': -2.0}, 'nlos': {'count_scale': 1.0, 'rho_scale': 1.7, 'beta_scale': 1.0, 'alpha_shift': 0.0}} -> C:\Users\admin\Desktop\Bodhi_Project\sub-thz-d2d-channel-model\config\channel_parameters_calibrated.yaml
